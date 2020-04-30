@@ -8,4 +8,12 @@ const loaded = () => {
         ulCtrl.innerHTML += para;
     }
     }
+
+    let divCtrl = document.getElementById("sum");
+    var sum = numbers.reduce(function(a,b){
+        return a +b;
+    },0);
+    divCtrl.innerHTML += sum;
+
 }
+
