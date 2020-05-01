@@ -1,33 +1,24 @@
 let valueOutput = 0;
 
 const dec = () => {
-    let inpt = document.getElementById("output");
-    inpt.value = --valueOutput;
-    if(inpt.value % 2 == 0){
-        inpt.style.color="red";
-    } else if(inpt.value % 3 === 0){
-        inpt.style.fontStyle="italic";
-    } else if(InputEvent.value % 7 ===0){
-        inpt.style.fontWeight="bold";
-    } else {
-        inpt.style.color="black";
-        inpt.style.fontStyle="serif";
-        inpt.style.fontWeight="normal";
-    }
+    valueOutput--;
+    display(valueOutput);
 }
 
 const inc = () => {
-   let inpt = document.getElementById("output");
-   inpt.value = ++valueOutput;
-    if(inpt.value % 2 === 0){
-        inpt.style.color="red";
-    } else if(inpt.value % 3 === 0){
-        inpt.style.fontStyle="italic";
-    } else if(InputEvent.value % 7 ===0){
-        inpt.style.fontWeight="bold";
-    } else {
-        inpt.style.color="black";
-        inpt.style.fontStyle="serif";
-        inpt.style.fontWeight="normal";
-    }
+    valueOutput++;
+   display(valueOutput);
+}
+
+const display = (output) => {
+    let outputCtrl = document.getElementById("output");
+    outputCtrl.value = output;
+    // ternary operators in lieu of if/else statements
+    outputCtrl.style.color = (output % 2 == 0) ? "red" : "black";
+    outputCtrl.style.fontStyle = (output % 3 == 0) ? "italic" : "normal";
+    outputCtrl.style.fontWeight = (output % 7 == 0) ? "bold" : "normal";
+}
+
+const loaded = () => {
+    display(output);
 }
